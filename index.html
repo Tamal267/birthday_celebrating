@@ -1,0 +1,226 @@
+<style>
+    body {
+     background-image:url("https://i.ibb.co/F0h97dS/Wish.jpg") ;
+     background-repeat:no-repeat;
+     background-size:cover;
+    }
+        .birth{
+            background: white;
+            color:transparent;
+            -webkit-text-stroke:1px #0ecc90;
+            text-align:center;
+            position:absolute;
+            top:15px;
+            left:-35px;
+            transform:rotate(-45deg);
+            padding-right:30px;
+            padding-left:30px;
+            z-index:3;
+            box-shadow:2px 2px 5px grey, -2px -2px 5px grey;
+        }
+    .boxerchild1{
+        position:absolute;
+        width:20px;
+        height: 20px;
+        background-color:white;
+        border-radius: 25px;
+        top:60%;
+            z-index:-1;
+        }
+        
+        .div1{
+            background:linear-gradient(to right,#5ddf90,#4dddf9,#5ddf90);
+            position:relative;
+            width:100%;
+            height:36px;
+            background-clip:content-box;
+            border-radius:0px 0px 100px 100px;
+            border-bottom:10px ridge #4def90;
+            margin-bottom:0;
+            z-index:1;
+            }
+        .div2{
+            background:linear-gradient(to right,#5ddf90,#4dddf9,#5ddf90);
+            width:200px;
+            height:40px;
+            position:absolute;
+            top:40px;
+            z-index:2;
+            }
+        .monthtext{
+            font-family:cursive;
+            color:#4d3f90;
+            font-size:30px;
+            background:linear-gradient(to right,#5ddf90,#4dddf9,#5ddf90);
+            text-align:center;
+            border-radius:20px;
+            }
+        #name{
+            font-family:'Times New Roman', Times, serif;
+            font-size:30px;
+            word-break:normal;
+            color:#74742c;
+            letter-spacing: 5px;
+            text-align:center;
+            background: linear-gradient(45deg,#ddeecc,#bed9c4,#abd99c);
+            border-radius:1px 1px 20px 20px;
+            padding-top:40px;
+            border:10px ridge #98817b;
+            border-top:none;
+            border-bottom:none;
+            z-index:1;
+            animation: name-move 2s ease-in-out 0s 3;
+            }
+    #name:before{
+        content:"";
+        background: linear-gradient(45deg, #ddeecc, #ffaacd, #00ccff);
+        position:absolute;
+        background-size:500%;
+        top:1px;
+        bottom:5px;
+        left:5px;
+        right:5px;
+        opacity:0.2;
+        border-radius:30px;
+        z-index:-1;
+        filter: blur(5px);
+        animation: name-move 2s ease-in-out 3s 3;
+    }
+    @keyframes name-move{
+            0%{
+            background-position:0%}
+            
+            100%{
+            background-position:500%;}
+            }
+        .biladat{
+            color:darkblue;
+            font-size:30px;
+            font-family:courier new;
+            }
+    .div12{
+        background: linear-gradient(60deg, #4deef9, #3fccdd, #00ccff, #9f203a);
+        position:relative;
+        padding:10px;
+        border-radius:10px 10px 60px 10px;
+        width: 200px;
+        height:auto;
+        background-repeat:none;
+        animation: animBox 1s linear infinite;
+        transform: rotate(5deg);
+        margin:40px;
+        z-index:1;
+        display:none;
+        border:10px ridge #acf;
+        }
+    @keyframes animBox{
+        0%{background-position: 0%;}
+        100%{background-position:500%;}
+    }
+    .div12:before{
+        content:"";
+        background: linear-gradient(60deg, #4deef9, #3fccdd, #00ccff, #9f203a);
+        position:absolute;
+        background-size:500%;
+        top:5px;
+        left:5px;
+        right:5px;
+        bottom:5px;
+        filter:blur(20px);
+        border-radius: 40px;
+        z-index:-1;
+            }
+    
+    .div12:before{
+        animation: animBox 8s ease-in-out infinite;
+        opacity:1;
+        }
+    .div12para{
+        color:white;
+        transform: rotate(-5deg);
+        font-size: 20px;
+        font-family:verdana;
+        text-align:justify;
+        letter-spacing:1px;
+        font-style:italic;
+        }
+    .moreboxbutton{
+    position:relative;
+    background-color:#4edf30;
+    font-size:30px;
+    font-weight:bold;
+    border-radius:10px;
+    color:white;
+    margin-bottom:2px;
+    outline:none;
+    box-shadow:10px 5px 10px 0px grey;
+    }
+    
+    
+    </style>
+    <div class="birth">
+    <div class="boxerchild1"></div>
+    <div class="boxerchild1" style="right:20%"></div>
+    BIRTHDAY <br/> GREETING
+    </div>
+    <div class="div1">
+        <div id="box" class="div2">
+            <p class="monthtext" id="text"></p>
+        </div>
+    </div>
+        <p id="name"><span class="biladat">I am wishing</span></p>
+        <p style="color:#7fffd4;font-size:30px;font-family:cursive;text-align:center;position:sticky;top:300px;">BLESS YOU</p>
+    
+    <button onclick="openBox()" id="moreboxbutton" class="moreboxbutton">...</button>
+    <div class="div12" id="morebox">
+    <p class="div12para">
+    Today is your birthday. I am celebrating it . I pray for you to get 'success' that will give you happiness for Infinite time.
+    </p>
+    </div>
+    
+    <script>
+        var box=document.getElementById("box");
+        var  pxle=0;
+        var i=0;
+        var text="27 November 2022";
+        var t=setInterval(move,100);
+        function move(){
+            if(pxle==60){
+                pxle=0;
+                }
+            else{
+                box.style.left=pxle+"vw";
+                pxle++;
+                }
+            }
+        
+        function textAnim(){
+            document.getElementById("text").innerHTML+=text.charAt(i);
+            i++;
+            }
+        setInterval(textAnim,150);
+        
+        function nameff(){
+        setTimeout(function (){
+            var name=document.getElementById("name");
+            name.innerHTML="Istiaque Ahmed's birthday";
+            }.bind(nameff),4000);
+            }
+        nameff();
+        
+    var moreboxCount=0;
+    document.getElementById("moreboxbutton");
+    function openBox(){
+        moreboxCount++;
+        if(moreboxCount%2==1){
+        
+        document.getElementById("morebox").style.display="block";
+        moreboxbutton.innerHTML="×";
+        }
+        else{
+            morebox.style.display="none";
+            moreboxbutton.innerHTML="...";
+            }
+    }
+    
+    </script>
